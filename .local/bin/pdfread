@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+[[ -n ${DOC:=$(rg --files --follow --type-add 'epub:*.epub' -t pdf -t epub | dmenu)} ]] && zathura "$DOC"

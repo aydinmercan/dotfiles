@@ -1,0 +1,3 @@
+R_PROFILE_USER = ${HOME}/.config/r/profile
+R_LIBS_USER = ${HOME}/.local/share/r/lib/4.0
+R_HISTFILE = ${HOME}/.local/share/r/hist.Rhistory

@@ -1,0 +1,66 @@
+env:
+  TERM: screen-256color
+
+window:
+  dynamic_title: true
+  padding:
+    x: 2
+    y: 2
+
+background_opacity: 0.70
+
+
+font:
+  size: 12.5
+  normal:
+    family: JetBrains Mono
+    #family: OpenDyslexic Mono
+    style: Regular
+  offset:
+    x: -1
+    y: 0
+
+cursor:
+  style: Block
+  unfocused_hollow: false
+
+mouse:
+  hide_when_typing: false
+  url:
+    launcher:
+      program: google-chrome-stable
+
+key_bindings:
+  - { key: K, mods: Alt,  action: ScrollPageUp   }
+  - { key: J, mods: Alt,  action: ScrollPageDown }
+  - { key: Y, mods: Control,  action: Copy }
+  - { key: P, mods: Control,  action: Paste }
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+colors:
+  primary:
+    foreground: '0xD8DEE9'
+    background: '0x000000'
+  cursor:
+    text: '0x2E3440'
+    cursor: '0xD8DEE9'
+  normal:
+    black: '0x3B4252'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x88C0D0'
+    white: '0xE5E9F0'
+  bright:
+    black: '0x4C566A'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x8FBCBB'
+    white: '0xECEFF4'
