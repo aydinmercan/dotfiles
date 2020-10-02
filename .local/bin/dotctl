@@ -7,13 +7,14 @@ case $1 in
     rm) $DOTCTLCMD rm --cached -r -f $2;;
     ls) echo "---- staging ----"
         $DOTCTLCMD diff --name-only --cached
-        echo "--- ${DOTFILEBRANCH:=master} ----"
+        echo "--- ${DOTFILEBRANCH:=main} ----"
         $DOTCTLCMD ls-tree --full-tree -r --name-only $DOTFILEBRANCH
         ;;
-    sync) $DOTCTLCMD add ~/. ;;
+    sync) $DOTCTLCMD add -A ~/. ;;
     pull) $DOTCTLCMD pull ;;
     commit) $DOTCTLCMD commit -m "$2" ;;
-    push) $DOTCTLCMD push -u origin ${DOTFILEBRANCH:-master} ;;
+    push) $DOTCTLCMD push -u origin ${DOTFILEBRANCH:-main} ;;
+    amend) $DOTCTLCMD commit --amend --no-edit ;;
     *) echo "dotctl - stupid bare git repo wrapper for dotfiles"
        echo "Setup:"
        echo "   * cerate a bare repo, specify the remote repo and set its path to DOTFILEDIR"
@@ -25,6 +26,7 @@ case $1 in
        echo "   ls: list files staging and used branch"
        echo "   sync: add all changes in tracked files."
        echo "   commit [MESSAGE]: Commit with message. -m is implcitly added."
-       echo "   push: push to DOTFILEBRANCH (default: master, currently: ${DOTFILEBRANCH:-master})"
+       echo "   amend: amend changes to an existing commit"
+       echo "   push: push to DOTFILEBRANCH (default: master, currently: ${DOTFILEBRANCH:-main})"
        ;;
 esac
