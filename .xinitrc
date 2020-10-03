@@ -4,5 +4,6 @@ picom &
 hsetroot -solid "#000000" &
 dunst &
 slstatus &
+xwallpaper --zoom ~/.config/wallpaper.png &
 xsetwacom set 18 MapToOutput HEAD-0 &
 dbus-launch dwm

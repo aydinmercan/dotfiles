@@ -1,6 +1,6 @@
 # ~/.profile
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+[ -f ~/.bashrc ] && . ~/.bashrc
 
 ## Defaults
 export LANG='en_US.UTF-8'
@@ -37,7 +37,7 @@ export CARGO_HOME="$HOME/.local/share/cargo"
 export CHICKEN_REPOSITORY="$HOME/.local/share/chicken"
 export GOHOME="$HOME/.local/share/go"
 export CABAL_CONFIG="$HOME/.config/cabal/config"
-export CUDA_CACHE_PATH="$HOME/.cache/nv"
+export CUDA_CACHE_PATH="$HOME/.cache/nv" # Folder is not automatically created.
 export PLTUSERHOME="$HOME/.local/share/racket"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot="$HOME"/.local/share/java/ -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
@@ -59,5 +59,5 @@ export MATLAB_LOG_DIR="$HOME/.cache/matlab"
 export WORK_DIR="$HOME/.cache/work"
 export ICEAUTHORITY="$HOME/.cache/ICEauthority"
 
-## Auto-start dwm in tty1, xfce in tty2
+## Auto-start dwm in tty1
 [ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx

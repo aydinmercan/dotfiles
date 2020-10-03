@@ -1,0 +1,11 @@
+defaults
+tls on
+uidls_file ~/.cache/mpop/%U_at_%H
+
+account etumail
+tls_starttls off
+tls_certcheck off
+user amercan
+host mail.etu.edu.tr
+port 995
+delivery maildir ~/.local/mail/etumail

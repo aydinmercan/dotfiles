@@ -26,7 +26,7 @@ alias cmaker='cmake -DCMAKE_BUILD_TYPE=Release .'
 alias cmaked='cmake -DCMAKE_BUILD_TYPE=Debug .'
 alias pactor='torsocks yay'
 alias diff='diff --color'
-#alias find='find -regextype sed'
+alias find='find -regextype sed'
 
 # Add everything to the history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
@@ -90,7 +90,7 @@ function bestdate () {
 }
 
 function qinfo() {
-    curl cht.sh/$1
+    curl https://cht.sh/$1
 }
 
 function weather() {

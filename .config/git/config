@@ -1,0 +1,19 @@
+[user]
+	name = Aydin Mercan
+	email = aydin@mercan.dev
+
+[core]
+	editor = nvim
+
+[color]
+	status = true
+	branch = true
+	interactive = true
+	diff = true
+	ui = true
+
+[advice]
+	addEmptyPathspec = false
+
+[alias]
+	stagels = diff --name-only --cached

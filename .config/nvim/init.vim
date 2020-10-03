@@ -99,7 +99,8 @@ nnoremap j gj
 nnoremap k gk
 set mouse=ni
 " Sane mail composing
-au BufRead /tmp/mutt-* set tw=72
+au BufNewFile,BufRead *.neomuttrc set filetype=neomuttrc
+au BufNewFile,BufRead /tmp/mutt-* set tw=72
 
 " [Plugins]
 
@@ -187,4 +188,4 @@ call plug#end()
 let g:seoul256_background=233
 let g:seoul256_light_background=233
 colo seoul256
-hi Normal ctermbg=16
+hi Normal ctermbg=none
