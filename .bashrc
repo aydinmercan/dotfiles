@@ -27,6 +27,7 @@ alias cmaked='cmake -DCMAKE_BUILD_TYPE=Debug .'
 alias pactor='torsocks yay'
 alias diff='diff --color'
 alias find='find -regextype sed'
+alias grep='grep -E --color=auto'
 
 # Add everything to the history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
