@@ -46,12 +46,12 @@ set lazyredraw
 set virtualedit=block
 " wildignore
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.d,*.obj,*.git,*.rbc,*.pyc,__pycache__,*.exe,*.elf,cscope.*,tags*,*.svn,*.hg,
-            \build,dist,*sites/*/files/*,*/obj/*,bin,node_modules,bower_components,cache,compiled,
-            \docs,example,bundle,vendor,*.md,*-lock.json,*.lock,*bundle*.js,*build*.js,.*rc*,*.json,
-            \*.min.*,*.map,*.bak,*.zip,*.pyc,*.class,*.sln,*.Master,*.csproj,*.tmp,*.csproj.user,*.cache,
-            \*.pdb,*.css,*.less,*.scss,*.dll,*.mp3,*.ogg,*.flac,*.swp,*.swo,*.bmp,*.gif,*.ico,*.jpg,*.png,
-            \*.rar,*.zip,*.tar,*.tar.*,*.pdf,*.doc,*.docx,*.ppt,*.pptx
+"set wildignore+=*.o,*.d,*.obj,*.git,*.rbc,*.pyc,__pycache__,*.exe,*.elf,cscope.*,tags*,*.svn,*.hg,
+ "           \build,dist,*sites/*/files/*,*/obj/*,bin,node_modules,bower_components,cache,compiled,
+  "          \docs,example,bundle,vendor,*.md,*-lock.json,*.lock,*bundle*.js,*build*.js,.*rc*,*.json,
+   "         \*.min.*,*.map,*.bak,*.zip,*.pyc,*.class,*.sln,*.Master,*.csproj,*.tmp,*.csproj.user,*.cache,
+    "        \*.pdb,*.css,*.less,*.scss,*.dll,*.mp3,*.ogg,*.flac,*.swp,*.swo,*.bmp,*.gif,*.ico,*.jpg,*.png,
+     "       \*.rar,*.zip,*.tar,*.tar.*,*.pdf,*.doc,*.docx,*.ppt,*.pptx
 
 " Symbol support
 set guifont=Symbols\ Nerd\ Font:h12
@@ -103,6 +103,24 @@ au BufNewFile,BufRead *.neomuttrc set filetype=neomuttrc
 au BufNewFile,BufRead /tmp/mutt-* set tw=72
 
 " [Plugins]
+let g:polyglot_disabled = ['v'] " I want verilog not some stupid snakeoil
+
+"" [Vim-Plug]
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'junegunn/fzf.vim' " fzf is just the best
+Plug 'junegunn/vim-easy-align' " lazy allignment aid
+Plug 'itchyny/lightline.vim' " best statusline
+Plug 'ntpeters/vim-better-whitespace' " be gone whitespace
+Plug 'sbdchd/neoformat' " formatting aid
+Plug 'lervag/vimtex' " latex stuff
+Plug 'preservim/nerdcommenter' " sane commenting
+Plug 'sheerun/vim-polyglot' " uber languagepack
+Plug 'isaacmorneau/vim-update-daily' " plugin name says all
+Plug 'luochen1990/rainbow'
+Plug 'joshdick/onedark.vim'
+Plug 'kylelaker/riscv.vim'
+call plug#end()
+
 
 "" [NeoFormat]
 let g:neoformat_basic_format_align = 1
@@ -122,9 +140,6 @@ let g:neoformat_enabled_java = ['clangformat']
 let g:neoformat_enabled_javascript = ['clangformat']
 nmap <C-f> :Neoformat<CR>
 
-"" [Vim-Polyglot]
-let g:polyglot_disabled = ['v'] " I want verilog not some stupid snakeoil
-
 "" [Vim-Airline]
 let g:lightline = {
             \ 'colorscheme': 'seoul256',
@@ -136,7 +151,7 @@ let g:lightline = {
 
 "" [FZF]
 nnoremap <C-m> :FZF<CR>
-
+nnoremap <C-n> :Tags<CR>
 
 "" [VimTeX]
 let g:tex_flavor = "latex" " I don't really use plain tex
@@ -165,27 +180,9 @@ let g:rainbow_conf = {
             \}
 
 "" [Vim-Wiki]
-let g:vimwiki_list = [{'path': '~/docs/vimwiki', 'syntax': 'markdown'}]
 
-"" [Vim-Plug]
-call plug#begin('~/.local/share/nvim/plugged')
-Plug 'junegunn/fzf.vim' " fzf is just the best
-Plug 'junegunn/vim-easy-align' " lazy allignment aid
-Plug 'itchyny/lightline.vim' " best statusline
-Plug 'ntpeters/vim-better-whitespace' " be gone whitespace
-Plug 'sbdchd/neoformat' " formatting aid
-Plug 'lervag/vimtex' " latex stuff
-Plug 'preservim/nerdcommenter' " sane commenting
-Plug 'jalvesaq/nvim-r' " r stuff
-Plug 'sheerun/vim-polyglot' " uber languagepack
-Plug 'isaacmorneau/vim-update-daily' " plugin name says all
-Plug 'luochen1990/rainbow'
-Plug 'junegunn/seoul256.vim'
-Plug 'vimwiki/vimwiki'
-Plug 'kylelaker/riscv.vim'
-call plug#end()
-
-let g:seoul256_background=233
-let g:seoul256_light_background=233
-colo seoul256
+colo onedark
 hi Normal ctermbg=none
+
+"" [Vim-Gutentags]
+

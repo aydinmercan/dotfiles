@@ -3,11 +3,11 @@
 [[ -z "$DOTCTLCMD" ]] && DOTCTLCMD="git --git-dir=$DOTFILEDIR --work-tree=$HOME"
 
 case $1 in
-    add) $DOTCTLCMD add -f $2 ;;
-    rm) $DOTCTLCMD rm --cached -r -f $2;;
+    add) $DOTCTLCMD add -f ${@:2} ;;
+    rm) $DOTCTLCMD rm --cached -r -f ${@:2};;
     ls) echo "---- staging ----"
         $DOTCTLCMD diff --name-only --cached
-        echo "--- ${DOTFILEBRANCH:=main} ----"
+        echo "---- ${DOTFILEBRANCH:=main} ----"
         $DOTCTLCMD ls-tree --full-tree -r --name-only $DOTFILEBRANCH
         ;;
     sync) $DOTCTLCMD add -A ~/. ;;
@@ -15,6 +15,7 @@ case $1 in
     commit) $DOTCTLCMD commit -m "$2" ;;
     push) $DOTCTLCMD push -u origin ${DOTFILEBRANCH:-main} ;;
     amend) $DOTCTLCMD commit --amend --no-edit ;;
+    autocheckout) $DOTCTLCMD checkout ${DOTFILEBRANCH:-main} ;;
     log) $DOTCTLCMD log ;;
     *) echo "dotctl - stupid bare git repo wrapper for dotfiles"
        echo "Setup:"

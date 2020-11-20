@@ -7,18 +7,18 @@ export LANG='en_US.UTF-8'
 export CC='clang'
 export CXX='clang++'
 export EDITOR='nvim'
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='fd -H'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export MANPAGER="nvim -c 'set ft=man' -"
-export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/matlab/r2020a/bin:$HOME/.local/share/vivado/Vivado/2018.3/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.config/emacs/bin"
 
 ## Cleanup
 # XMonad
-export XMONAD_CONFIG_HOME="$HOME/.config/xmonad"
-export XMONAD_DATA_HOME="$HOME/.local/share/xmonad"
-export XMONAD_CACHE_HOME="$HOME/.cache/xmonad"
+export XMONAD_CONFIG_DIR="$HOME/.local/share/xmonad"
+export XMONAD_DATA_DIR="$HOME/.local/share/xmonad"
+export XMONAD_CACHE_DIR="$HOME/.cache/xmonad"
 # History
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE="$HOME/.history"
@@ -42,6 +42,7 @@ export PLTUSERHOME="$HOME/.local/share/racket"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot="$HOME"/.local/share/java/ -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 export JAVA_HOME="/usr/lib/jvm/default/"
+export LEIN_HOME="$HOME/.local/share/lein"
 export R_ENVIRON_USER="$HOME/.local/share/r/env"
 export GRADLE_USER_HOME="$HOME/.local/share/gradle"
 # PostgreSQL
@@ -58,6 +59,4 @@ export JUPYTER_CONFIG_DIR="$HOME/.config/jupyter"
 export MATLAB_LOG_DIR="$HOME/.cache/matlab"
 export WORK_DIR="$HOME/.cache/work"
 export ICEAUTHORITY="$HOME/.cache/ICEauthority"
-
-## Auto-start dwm in tty1
-[ "$(tty)" = "/dev/tty1" ] && ! pgrep -x Xorg >/dev/null && exec startx
+export DOOM_HOME="$HOME/.config/doom/"

@@ -1,3 +1,4 @@
+
 env:
   TERM: screen-256color
 
@@ -7,15 +8,23 @@ window:
     x: 2
     y: 2
 
-background_opacity: 0.85
-
+background_opacity: 1
 
 font:
-  size: 12.5
+  size: 8
   normal:
-    family: JetBrains Mono
-    #family: OpenDyslexic Mono
-    style: Regular
+    family: JetBrains Mono NL
+    style: Normal
+  bold:
+    family: JetBrains Mono NL
+    style: Bold
+  italic:
+    family: JetBrains Mono NL
+    style: Italic
+  bold_italic:
+    family: JetBrains Mono NL
+    style: Bold Italic
+
   offset:
     x: -1
     y: 0
@@ -39,28 +48,47 @@ key_bindings:
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
-colors:
-  primary:
-    foreground: '0xD8DEE9'
-    background: '0x000000'
-  cursor:
-    text: '0x2E3440'
-    cursor: '0xD8DEE9'
-  normal:
-    black: '0x3B4252'
-    red: '0xBF616A'
-    green: '0xA3BE8C'
-    yellow: '0xEBCB8B'
-    blue: '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan: '0x88C0D0'
-    white: '0xE5E9F0'
-  bright:
-    black: '0x4C566A'
-    red: '0xBF616A'
-    green: '0xA3BE8C'
-    yellow: '0xEBCB8B'
-    blue: '0x81A1C1'
-    magenta: '0xB48EAD'
-    cyan: '0x8FBCBB'
-    white: '0xECEFF4'
+schemes:
+  onedark: &onedark
+    primary:
+      background: '#000000'
+      foreground: '#abb2bf'
+    selection:
+      text:       CellForeground
+      background: '#3e4451' # syntax-selection-color
+    normal:
+      black:      '#5c6370' # mono-3
+      red:        '#e06c75' # red 1
+      green:      '#98c379'
+      yellow:     '#e5c07b' # orange 2
+      blue:       '#61afef'
+      magenta:    '#c678dd'
+      cyan:       '#56b6c2'
+      white:      '#828997' # mono-2
+
+  fairyfloss: &fairyfloss
+    primary:
+      background: '#1d1f21'
+      foreground: '#f8f8f2'
+    cursor:
+      text: '#f8f8f2'
+      cursor: '#c7b7c7'
+    normal:
+      black: '#3b3a32'
+      red: '#f1756f'
+      green: '#6de874'
+      yellow: '#e6c000'
+      blue: '#a381ff'
+      magenta: '#ff87b1'
+      cyan: '#7ef5b8'
+      white: '#c7b7c7'
+    bright:
+      black: '#685868'
+      red: '#ff9f9a'
+      green: '#7bfa81'
+      yellow: '#ffea00'
+      blue: '#c5a3ff'
+      magenta: '#ffb8d1'
+      cyan: '#c2ffdf'
+      white: '#ffefff'
+colors: *onedark

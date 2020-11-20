@@ -1,0 +1,6 @@
+--exclude=*.md
+--exclude=*.elc
+
+--exclude=CMakeFiles
+--exclude=CMakeLists.txt
+--exclude=cmake_install.cmake
