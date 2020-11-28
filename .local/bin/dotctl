@@ -10,13 +10,18 @@ case $1 in
         echo "---- ${DOTFILEBRANCH:=main} ----"
         $DOTCTLCMD ls-tree --full-tree -r --name-only $DOTFILEBRANCH
         ;;
-    sync) $DOTCTLCMD add -A ~/. ;;
+    sync)
+        $DOTCTLCMD add -A ~/.
+        echo "---- staging ----"
+        $DOTCTLCMD diff --name-only --cached
+        ;;
     pull) $DOTCTLCMD pull ;;
     commit) $DOTCTLCMD commit -m "$2" ;;
     push) $DOTCTLCMD push -u origin ${DOTFILEBRANCH:-main} ;;
     amend) $DOTCTLCMD commit --amend --no-edit ;;
     autocheckout) $DOTCTLCMD checkout ${DOTFILEBRANCH:-main} ;;
     log) $DOTCTLCMD log ;;
+    cmd) $DOTCTLCMD ${@:2} ;;
     *) echo "dotctl - stupid bare git repo wrapper for dotfiles"
        echo "Setup:"
        echo "   * cerate a bare repo, specify the remote repo and set its path to DOTFILEDIR"

@@ -33,3 +33,4 @@ image/x-tga=sxiv.desktop;
 image/x-xpixmap=sxiv.desktop;
 x-content/unix-software=nautilus-autorun-software.desktop;
 application/pdf=org.gnome.Evince.desktop;org.pwmt.zathura-pdf-mupdf.desktop;
+image/jpeg=google-chrome.desktop;

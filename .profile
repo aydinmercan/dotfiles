@@ -1,6 +1,7 @@
 # ~/.profile
 
 [ -f ~/.bashrc ] && . ~/.bashrc
+[ -f ~/.local/share/cargo/env ] && . ~/.local/share/cargo/env
 
 ## Defaults
 export LANG='en_US.UTF-8'
@@ -12,7 +13,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export MANPAGER="nvim -c 'set ft=man' -"
-export PATH="$PATH:$HOME/.local/bin:$HOME/.config/emacs/bin"
+export PATH="$HOME/.local/bin:$HOME/.config/emacs/bin:$PATH"
 
 ## Cleanup
 # XMonad
@@ -34,6 +35,7 @@ export NOTMUCH_CONFIG="$HOME/.config/notmuch/notmuchrc"
 export NBMGIT="$HOME/.local/share/notmuch/nmbug"
 # Languages
 export CARGO_HOME="$HOME/.local/share/cargo"
+export RUSTUP_HOME="$HOME/.local/share/rustup"
 export CHICKEN_REPOSITORY="$HOME/.local/share/chicken"
 export GOHOME="$HOME/.local/share/go"
 export CABAL_CONFIG="$HOME/.config/cabal/config"

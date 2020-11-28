@@ -1,0 +1,5 @@
+ignore noexec /tmp
+ignore noexec ${HOME}
+private-bin bash,cut,echo,egrep,grep,head,sed,sh,tclsh,tr,xdg-mime,xdg-open
+whitelist ${HOME}/.config/discord
+seccomp !chroot
