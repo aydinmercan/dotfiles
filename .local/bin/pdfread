@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-: $(rg --files --follow --type-add 'epub:*.epub' -t pdf -t epub ~/docs ~/books ~/downloads | dmenu)
-[[ -e $_ ]] && zathura $_
