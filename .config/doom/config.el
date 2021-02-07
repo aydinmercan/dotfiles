@@ -1,27 +1,35 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+;; Place your private configuration here! Remember, you do not need to run 'doom
+;; sync' after modifying this file!
 
 (setq user-full-name "Aydin Mercan"
       user-mail-address "aydin@mercan.dev")
 
-(setq doom-unicode-font (font-spec :family "Noto Sans Mono"
-                                   :size 22
-                                   :weight 'regular)
-      doom-unicode-font (font-spec :family "Noto Color Emoji"
-                                   :size 22))
+;; + `doom-variable-pitch-font'
+(setq doom-theme 'doom-one
+      doom-font (font-spec :family "Fantasque Sans Mono"
+                           :size 16)
+      doom-big-font (font-spec :family "Fantasque Sans Mono"
+                               :size 22)
+      doom-unicode-font (font-spec :family "Noto Sans Mono"
+                                   :size 16))
 
-(setq-default indent-tabs-mode nil)
+(setq projectile-project-search-path '("~/code"))
 
-(setq doom-theme 'doom-one)
-(setq org-directory "~/docs/org/"
-      org-agenda-files '("~/docs/org/things/inbox.org"
-                         "~/docs/org/things/projects.org"))
+(setq org-directory "~/docs/org/")
 
-;; 'relative is also an option
 (setq display-line-numbers-type t)
 
-(setq projectile-project-search-path '("~/code/"))
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+(map! "C-/" 'evil-ex-nohighlight)
+
+;; Switch the two as I use M-x more often
+(map! :leader
+      :desc "M-x" ";" 'counsel-M-x
+      :desc "Eval expression" ":" 'pp-eval-expression)
+
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -33,18 +41,12 @@
 ;;   `require' or `use-package'.
 ;; - `map!' for binding new keys
 ;;
-(setq-hook! 'cmake-mode-hook +format-with :none)
-(setq-hook! 'cmake-mode-hook +format-with-lsp nil)
-
-(map! "C-/" 'evil-ex-nohighlight)
-(map! "M-h" 'centaur-tabs-backward
-      "M-l" 'centaur-tabs-forward)
-(map! :leader
-      ";" 'counsel-M-x
-      ":" 'pp-eval-expression)
-
-(after! 'projectile-mode
-  (projectile-register-project-type 'xilinx-verilog '("*.xpr")))
+;; To get information about any of these functions/macros, move the cursor over
+;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
+;; This will open documentation for it, including demos of how they are used.
+;;
+;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
+;; they are implemented.
 
 (use-package! clang-format
   :defer t
@@ -57,15 +59,13 @@
   (tab-width 4)
   (cmake-tab-width 4))
 
-(use-package! flycheck
-  :defer t
-  :custom
-  (flycheck-verilog-verilator-executable "verilator_bin"))
-
 (use-package! elfeed
   :defer t
   :custom
   (elfeed-db-directory "~/.local/share/elfeed")
   (elfeed-feeds '("http://nullprogram.com/feed/"
+                  "https://gru.gq/feed/"
+                  "https://lab.whitequark.org/atom.xml"
                   "https://www.schneier.com/feed/atom/"
-                  "https://www.relay.fm/cortex/feed")))
+                  "https://www.relay.fm/cortex/feed"
+                  "https://archlinux.org/feeds/news/")))

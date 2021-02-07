@@ -1,9 +1,3 @@
-setxkbmap -option caps:swapescape &
-picom &
-hsetroot -solid "#000000" &
-dunst &
-slstatus &
-xwallpaper --zoom ~/.config/wallpaper.png &
-xrdb -merge ~/.Xresources &
-xsetwacom set 18 MapToOutput HEAD-0 &
-dbus-launch dwm
+export GDK_BACKEND=x11
+export XDG_SESSION_TYPE=x11
+exec gnome-session

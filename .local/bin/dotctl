@@ -5,10 +5,10 @@
 case $1 in
     add) $DOTCTLCMD add -f ${@:2} ;;
     rm) $DOTCTLCMD rm --cached -r -f ${@:2};;
-    ls) echo "---- staging ----"
-        $DOTCTLCMD diff --name-only --cached
-        echo "---- ${DOTFILEBRANCH:=main} ----"
+    ls) echo "---- ${DOTFILEBRANCH:=main} ----"
         $DOTCTLCMD ls-tree --full-tree -r --name-only $DOTFILEBRANCH
+        echo "---- staging ----"
+        $DOTCTLCMD diff --name-only --cached
         ;;
     sync)
         $DOTCTLCMD add -A ~/.

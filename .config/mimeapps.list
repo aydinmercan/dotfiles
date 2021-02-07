@@ -18,6 +18,7 @@ x-scheme-handler/https=google-chrome.desktop
 text/html=google-chrome.desktop
 text/org=emacs.desktop
 x-content/unix-software=nautilus-autorun-software.desktop
+x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
 
 [Added Associations]
 image/bmp=sxiv.desktop;
@@ -32,5 +33,5 @@ image/x-portable-graymap=sxiv.desktop;
 image/x-tga=sxiv.desktop;
 image/x-xpixmap=sxiv.desktop;
 x-content/unix-software=nautilus-autorun-software.desktop;
-application/pdf=org.gnome.Evince.desktop;org.pwmt.zathura-pdf-mupdf.desktop;
-image/jpeg=google-chrome.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;org.gnome.Evince.desktop;
+image/jpeg=org.gnome.eog.desktop;google-chrome.desktop;

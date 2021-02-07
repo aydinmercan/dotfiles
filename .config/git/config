@@ -6,14 +6,17 @@
 	editor = nvim
 
 [color]
-	status = true
-	branch = true
-	interactive = true
-	diff = true
-	ui = true
+	status = auto
+	branch = auto
+	interactive = auto
+	diff = auto
+	ui = auto
 
 [advice]
-	addEmptyPathspec = false
+    addEmptyPathspec = false
+
+[merge]
+    conflictstyle = diff3
 
 [alias]
 	stagels = diff --name-only --cached

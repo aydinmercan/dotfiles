@@ -17,6 +17,7 @@ shopt -s checkwinsize
 alias ls='exa --group-directories-first'
 alias ll='exa -l --group-directories-first'
 alias lla='exa -lah --group-directories-first'
+alias cat='bat -pp'
 alias cd..='cd ..'
 alias tree='exa --tree --level=2 --long --group-directories-first'
 alias treefull='exa --tree --long --group-directories-first'
@@ -24,10 +25,13 @@ alias etree='command tree -C'
 alias irssi='irssi --config=$HOME/.config/irssi/config --home=$HOME/.local/share/irssi'
 alias cmaker='cmake -DCMAKE_BUILD_TYPE=Release .'
 alias cmaked='cmake -DCMAKE_BUILD_TYPE=Debug .'
+alias cmk='cmake --build .'
 alias pactor='torsocks yay'
 alias diff='diff --color'
 alias find='find -regextype sed'
 alias grep='grep -E --color=auto'
+alias gdb='gdb -q'
+alias yosys='yosys -Q'
 
 # Add everything to the history
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"

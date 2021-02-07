@@ -1,14 +1,15 @@
-# ~/.profile
-
 [ -f ~/.bashrc ] && . ~/.bashrc
 [ -f ~/.local/share/cargo/env ] && . ~/.local/share/cargo/env
+[ -f ~/.local/share/ghcup/env ] && . ~/.local/share/ghcup/env
 
 ## Defaults
 export LANG='en_US.UTF-8'
 export CC='clang'
 export CXX='clang++'
+export LD='ld.lld'
+export AR='llvm-ar'
 export EDITOR='nvim'
-export FZF_DEFAULT_COMMAND='fd -H'
+export FZF_DEFAULT_COMMAND='fd -H --type file'
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export QT_QPA_PLATFORMTHEME="qt5ct"
@@ -34,6 +35,7 @@ export MINISIGN_CONFIG_DIR="$HOME/.local/share/minisign"
 export NOTMUCH_CONFIG="$HOME/.config/notmuch/notmuchrc"
 export NBMGIT="$HOME/.local/share/notmuch/nmbug"
 # Languages
+export GHCUP_USE_XDG_DIRS=1
 export CARGO_HOME="$HOME/.local/share/cargo"
 export RUSTUP_HOME="$HOME/.local/share/rustup"
 export CHICKEN_REPOSITORY="$HOME/.local/share/chicken"
@@ -47,6 +49,9 @@ export JAVA_HOME="/usr/lib/jvm/default/"
 export LEIN_HOME="$HOME/.local/share/lein"
 export R_ENVIRON_USER="$HOME/.local/share/r/env"
 export GRADLE_USER_HOME="$HOME/.local/share/gradle"
+export STACK_ROOT="$HOME/.local/share/stack"
+export JULIA_DEPOT_PATH="$HOME/.local/share/julia"
+export JULIA_HISTORY="$HOME/.cache/julia/repl.history"
 # PostgreSQL
 export PSQLRC="$HOME/.config/pg/psqlrc"
 export PSQL_HISTORY="$HOME/.cache/pg/psql_history"
