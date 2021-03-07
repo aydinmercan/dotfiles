@@ -1,0 +1,32 @@
+[user]
+    name = Aydin Mercan
+    email = aydin@mercan.dev
+    signingkey = DF3DE1F31DED1881
+
+[core]
+    editor = nvim
+    excludesfile = "~/.config/git/ignore"
+
+[commit]
+    gpgsign = true
+
+[merge]
+    conflictstyle = diff3
+
+[color]
+    status = true
+    branch = true
+    interactive = true
+    diff = true
+    ui = true
+
+[advice]
+    addEmptyPathspec = false
+    addIgnoredFile = false
+
+[init]
+    defaultBranch = "main"
+
+[alias]
+    stagels = diff --name-only --cached
+

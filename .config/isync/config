@@ -1,0 +1,23 @@
+IMAPAccount mercandev
+Host imap.porkbun.com
+User aydin@mercan.dev
+PassCmd "secret-tool lookup user aydin@mercan.dev service smtp"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore mercandev-remote
+Account mercandev
+
+MaildirStore mercandev-local
+Subfolders Verbatim
+Path ~/.local/mail/mercandev/
+Inbox ~/.local/mail/mercandev/Inbox
+Subfolders Verbatim
+
+Channel mercandev
+Master :mercandev-remote:
+Slave :mercandev-local:
+Expunge Both
+Create Both
+Patterns *
+SyncState *

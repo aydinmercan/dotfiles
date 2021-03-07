@@ -1,0 +1,54 @@
+{
+    "layer": "top",
+    "height": 30,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["tray", "mpd", "pulseaudio", "battery", "clock"],
+
+    "sway/window": {
+        "max-length": 80,
+	    "tooltip": false
+    },
+
+    "mpd": {
+        "format-disconnected": "📻 ❌",
+        "format-stopped": "📻 ⏹️",
+        "format": "📻 {stateIcon}",
+        "interval": 10,
+        "state-icons": {
+            "paused": "⏸️",
+            "playing": "🎷"
+        },
+        "on-click": "mpc toggle",
+        "tooltip-format": "{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+        "tooltip-format-disconnected": "[disconnected]"
+    },
+
+    "pulseaudio": {
+        "format": "🔊 {volume}%",
+        "format-muted": "🔇"
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["🔋"],
+        "format-charging": "⚡ {capacity}%",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false
+    },
+
+
+    "clock": {
+        "format": "🕓 {:%a %d %b %H:%M}",
+        "tooltip": false
+    },
+
+    "tray": {
+        "icon-size": 18
+    }
+}

@@ -1,0 +1,6 @@
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+        include "us"
+        name[Group1] = "US QWERTY with Hyper as right alt";
+        key <RALT> { [ Hyper_L, Hyper_R ] };
+};

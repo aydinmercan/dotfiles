@@ -1,0 +1,17 @@
+defaults
+auth on
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+
+account mercandev
+host smtp.porkbun.com
+port 587
+from aydin@mercan.dev
+user aydin@mercan.dev
+
+account etumail
+host mail.etu.edu.tr
+tls_certcheck off
+port 587
+from amercan@etu.edu.tr
+user amercan

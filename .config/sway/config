@@ -1,0 +1,75 @@
+set $mod Mod4
+set $term kitty
+
+# Startup
+exec mako
+exec dex -a
+exec setxkbmap -option caps:swapescape
+
+exec_always {
+    gsettings set org.gnome.desktop.interface cursor-size 24
+}
+
+bar {
+    swaybar_command waybar
+}
+
+smart_borders on
+default_border pixel
+
+bindsym $mod+Shift+c kill
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+q exit
+
+bindsym $mod+Return exec $term
+bindsym $mod+p exec wofi --show run
+bindsym $mod+w exec firefox
+bindsym $mod+Shift+w exec google-chrome-stable
+bindsym $mod+c exec code-oss
+bindsym $mod+e exec emacs
+bindsym $mod+b exec pdfread
+bindsym $mod+Shift+b exec bookread
+
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+
+input "type:keyboard" {
+    xkb_layout "intangible_layout"
+    xkb_options caps:swapescape
+}
+
+# Cursor theme
+seat seat0 xcursor_theme capitaine-cursors-light 22
+
+# Wallpaper
+output eDP-1 {
+    background ~/.config/wallpaper.jpg center
+}
+
+bindsym $mod+Shift+grave move scratchpad
+bindsym $mod+grave scratchpad show
+
+# Workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
