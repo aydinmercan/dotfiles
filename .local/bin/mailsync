@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+mbsync -a -c ~/.config/isync/config
+mpop -a
+notmuch search --output=files --format=text0 tag:deleted | xargs -r0 rm
+notmuch new
+notmuch tag +spam -new -- tag:new and from:no-reply@piazza.com
