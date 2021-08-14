@@ -1,0 +1,31 @@
+[user]
+    name = Aydin Mercan
+    email = aydin@mercan.dev
+
+[core]
+    editor = nvim
+    excludesfile = "~/.config/git/ignore"
+
+[commit]
+    gpgsign = false
+
+[merge]
+    conflictstyle = diff3
+
+[color]
+    status = true
+    branch = true
+    interactive = true
+    diff = true
+    ui = true
+
+[advice]
+    addEmptyPathspec = false
+    addIgnoredFile = false
+
+[init]
+    defaultBranch = "main"
+
+[alias]
+    sls = diff --name-only --cached
+    adog = log --all --decorate --oneline --graph

@@ -1,0 +1,12 @@
+*~
+.*.swp
+.DS_Store
+.vscode
+
+.clangd
+compile_commands.json
+
+*.cmake
+CMakeFiles
+.ninja*
+build.ninja
