@@ -6,6 +6,7 @@
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 [ -r /usr/share/fzf/completion.bash ] && . /usr/share/fzf/completion.bash
 [ -r /usr/share/fzf/key-bindings.bash ] && . /usr/share/fzf/key-bindings.bash
+[ -f /usr/share/clang/bash-autocomplete.sh ] && . /usr/share/clang/bash-autocomplete.sh
 
 set -o vi
 stty -ixon

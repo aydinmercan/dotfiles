@@ -1,6 +1,16 @@
 root = true
 
+## Languages
+
 [*.{c,cpp,h,hpp,cu}]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+indent_style = tab
+indent_size = 8
+
+[{go.{mod,sum},*.go}]
 end_of_line = lf
 insert_final_newline = true
 charset = utf-8
@@ -16,13 +26,7 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
 
-[{go.{mod,sum},*.go}]
-end_of_line = lf
-insert_final_newline = true
-charset = utf-8
-trim_trailing_whitespace = true
-indent_style = tab
-indent_size = 8
+## Build
 
 [meson.build]
 end_of_line = lf
@@ -32,19 +36,10 @@ trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
 
-[APKBUILD]
+[{APKBUILD,Makefile,*.mk}]
 end_of_line = lf
 insert_final_newline = true
 charset = utf-8
 trim_trailing_whitespace = true
 indent_style = tab
 indent_size = 8
-
-[Makefile]
-end_of_line = lf
-insert_final_newline = true
-charset = utf-8
-trim_trailing_whitespace = true
-indent_style = tab
-indent_size = 8
-

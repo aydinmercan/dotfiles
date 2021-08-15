@@ -11,6 +11,7 @@ return require('packer').startup(function()
     use {'editorconfig/editorconfig-vim'}
     use {'norcalli/snippets.nvim'}
     use {'folke/tokyonight.nvim'}
+
     use {
         'hoob3rt/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},

@@ -1,0 +1,18 @@
+font:
+  size: 14
+  normal:
+    family: Fantasque Sans Mono
+  bold:
+    family: Fantasque Sans Mono
+  italic:
+    family: Fantasque Sans Mono
+  bold_italic:
+    family: Fantasque Sans Mono
+
+colors:
+  primary:
+    background: '#000000'
+
+    foreground: '#c5c8c6'
+    dim_foreground: '#828482'
+    bright_foreground: '#eaeaea'
