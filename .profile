@@ -9,3 +9,4 @@ if [[ -n $BASH ]]; then
 
     [[ -f ~/.bashrc ]] && . ~/.bashrc
 fi
+

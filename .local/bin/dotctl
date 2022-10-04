@@ -14,15 +14,16 @@ case $1 in
         $DOTCTLCMD diff --name-only --cached
         ;;
     add) $DOTCTLCMD add -f ${@:2} ;;
-    rm) $DOTCTLCMD rm --cached -r -f ${@:2};;
-    diff) $DOTCTLCMD diff --staged ;;
-    pull) $DOTCTLCMD pull ;;
-    commit) $DOTCTLCMD commit -m "$2" ;;
-    push) $DOTCTLCMD push -u origin ${DOTFILEBRANCH:-main} ;;
-    amend) $DOTCTLCMD commit --amend --no-edit ;;
-    autocheckout) $DOTCTLCMD checkout ${DOTFILEBRANCH:-main} ;;
-    log) $DOTCTLCMD log ;;
+    amend) $DOTCTLCMD commit --amend --no-edit ${@:2} ;;
+    autocheckout) $DOTCTLCMD checkout ${DOTFILEBRANCH:-main} ${@:2} ;;
     cmd) $DOTCTLCMD ${@:2} ;;
+    commit) $DOTCTLCMD commit ${@:2} ;;
+    diff) $DOTCTLCMD diff --staged ${@:2} ;;
+    log) $DOTCTLCMD log ${@:2} ;;
+    pull) $DOTCTLCMD pull ${@:2} ;;
+    push) $DOTCTLCMD push -u origin ${DOTFILEBRANCH:-main} ;;
+    rm) $DOTCTLCMD rm --cached -r -f ${@:2};;
+    sdiff) $DOTCTLCMD diff --staged ${@:2} ;;
     *) echo "dotctl - stupid bare git repo wrapper for dotfiles"
        echo "Setup:"
        echo "   * cerate a bare repo, specify the remote repo and set its path to DOTFILEDIR"
@@ -30,13 +31,14 @@ case $1 in
        echo "Usage: dotctl [OPTION] ([ARGUMENT])"
        echo "Options:"
        echo "   add [FILE]: add FILE to the repository"
-       echo "   rm [FILE]: remove FILE from tracking only."
-       echo "   ls: list files staging and used branch"
-       echo "   sync: add all changes in tracked files."
-       echo "   commit [MESSAGE]: Commit with message. -m is implcitly added."
        echo "   amend: amend changes to an existing commit"
-       echo "   log: same as normal log"
+       echo "   commit: commit changes"
        echo "   diff: show diff of staged changes"
+       echo "   log: same as normal log"
+       echo "   ls: list files staging and used branch"
        echo "   push: push to DOTFILEBRANCH (default: main, currently: ${DOTFILEBRANCH:-main})"
+       echo "   rm [FILE]: remove FILE from tracking only"
+       echo "   sdiff: diff staged changed"
+       echo "   sync: add all changes in tracked files"
        ;;
 esac

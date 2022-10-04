@@ -1,0 +1,32 @@
+format = '''$username@$hostname $time \[$directory$git_branch\]
+$character'''
+
+add_newline = false
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✖](bold red)"
+
+[username]
+style_user = "white bold"
+style_root = "red bold"
+format = "[$user]($style)"
+show_always = true
+disabled = false
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bold purple)"
+disabled = false
+
+[time]
+time_format = "%H:%M"
+format = "[$time]($style)"
+disabled = false
+
+[git_branch]
+format = "[$branch]($style)"
+style = "white"
+truncation_length = 48
+truncation_symbol = "..."
+disabled = false

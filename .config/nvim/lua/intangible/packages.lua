@@ -3,8 +3,6 @@ vim.cmd [[ packadd packer.nvim ]]
 return require('packer').startup(function()
     use {'wbthomason/packer.nvim', opt = true}
 
-    use {'nvim-lua/popup.nvim'}
-    use {'nvim-lua/plenary.nvim'}
     use {'nvim-lua/completion-nvim'}
     use {'editorconfig/editorconfig-vim'}
 
@@ -30,6 +28,10 @@ return require('packer').startup(function()
     use {
         'folke/tokyonight.nvim',
         config = function()
+            require('tokyonight').setup({
+                style = "night",
+            })
+
             vim.cmd [[ colorscheme tokyonight ]]
         end,
     }
@@ -67,7 +69,7 @@ return require('packer').startup(function()
         config = function()
             require('lualine').setup {
                 options = {
-                    theme = 'material',
+                    theme = 'tokyonight',
                     section_separators = '',
                     component_separators = ' ',
                 }
