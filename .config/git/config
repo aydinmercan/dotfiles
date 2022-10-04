@@ -1,0 +1,46 @@
+[user]
+    name = Aydin Mercan
+    email = aydin@mercan.dev
+    signingkey = "~/.ssh/git"
+
+[core]
+    editor = nvim
+    excludesfile = "~/.config/git/ignore"
+
+# Despite being under the gpg setting all signing is through ssh
+[gpg]
+    format = ssh
+
+[commit]
+    gpgsign = true
+
+[push]
+    gpgsign = if-asked
+
+[tag]
+    gpgsign = true
+
+[merge]
+    conflictstyle = diff3
+
+[color]
+    status = true
+    branch = true
+    interactive = true
+    diff = true
+    ui = true
+
+[advice]
+    addEmptyPathspec = false
+    addIgnoredFile = false
+
+[log]
+    showSignature = true
+
+[init]
+    defaultBranch = "main"
+
+[alias]
+    sls = diff --name-only --cached
+    sdiff = diff --staged
+    adog = log --all --decorate --oneline --graph
