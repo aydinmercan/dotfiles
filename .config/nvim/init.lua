@@ -1,3 +1,3 @@
 require 'intangible.keymap'
 require 'intangible.options'
-require 'intangible.packages'
+require 'intangible.packages' -- last

@@ -1,5 +1,5 @@
 -- Saner nagivation and search
-vim.g.mapleader = ","
+vim.g.mapleader = ' '
 
 --
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })

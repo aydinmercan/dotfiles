@@ -5,9 +5,10 @@ vim.filetype.add({
     },
     filename = {
         [".clang-format"] = "yaml",
+        ["APKBUILD"] = "sh",
         ["Justfile"] = "make",
     },
     pattern = {
-        ["Containerfile.*"] = "dockerfile",
+        ["(Container|Docker)file.*"] = "dockerfile",
     },
 })

@@ -4,7 +4,6 @@
 [[ $- != *i* ]] && return
 
 [ -r "$CARGO_HOME/env" ] && . "$CARGO_HOME/env"
-[ -r "$XDG_DATA_HOME/ghcup/env" ] && . "$XDG_DATA_HOME/ghcup/env"
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 [ -r /usr/share/clang/bash-autocomplete.sh ] && . /usr/share/clang/bash-autocomplete.sh
 [ -r ~/.bash_preexec ] && . ~/.bash_preexec

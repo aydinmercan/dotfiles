@@ -1,12 +1,23 @@
-vim.cmd [[ packadd packer.nvim ]]
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
 
-return require('packer').startup(function()
-    use {'wbthomason/packer.nvim', opt = true}
+vim.opt.rtp:prepend(lazypath)
 
-    use {'nvim-lua/completion-nvim'}
-    use {'editorconfig/editorconfig-vim'}
+return require('lazy').setup({
+    {'nvim-lua/completion-nvim'},
+    {'editorconfig/editorconfig-vim'},
 
-    use {
+    {
         'neovim/nvim-lspconfig',
         config = function()
             local lsp = require('lspconfig')
@@ -23,9 +34,9 @@ return require('packer').startup(function()
                 }
             }
         end
-    }
+    },
 
-    use {
+    {
         'folke/tokyonight.nvim',
         config = function()
             require('tokyonight').setup({
@@ -34,9 +45,9 @@ return require('packer').startup(function()
 
             vim.cmd [[ colorscheme tokyonight ]]
         end,
-    }
+    },
 
-    use {
+    {
         'nvim-treesitter/nvim-treesitter',
         config = function()
             require('nvim-treesitter.configs').setup {
@@ -61,11 +72,11 @@ return require('packer').startup(function()
                 set foldlevel=9999
             ]], false)
         end
-    }
+    },
 
-    use {
+    {
         'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        dependencies = {'kyazdani42/nvim-web-devicons', lazy = true},
         config = function()
             require('lualine').setup {
                 options = {
@@ -75,12 +86,12 @@ return require('packer').startup(function()
                 }
             }
         end
-    }
+    },
 
-    use {
+    {
         'nvim-telescope/telescope.nvim',
-        requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-        setup = function()
+        dependencies = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
+        init = function()
             vim.api.nvim_set_keymap('n', '<CR>', ':Telescope fd<CR>', {noremap = true, silent = true})
         end,
 
@@ -97,12 +108,12 @@ return require('packer').startup(function()
                 }
             }
         end,
-    }
+    },
 
 
-    use {
+    {
         'mhartington/formatter.nvim',
-        setup = function()
+        init = function()
             vim.api.nvim_set_keymap('n', '<C-f>', ':Format<CR>', {noremap = true, silent = true})
         end,
 
@@ -196,6 +207,5 @@ return require('packer').startup(function()
                 }
             })
         end
-    }
-
-end)
+    },
+})
