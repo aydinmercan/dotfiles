@@ -26,6 +26,7 @@ BinPackArguments: false
 BinPackParameters: false
 BreakBeforeBinaryOperators: All
 BreakBeforeBraces: Custom
+#BreakAfterAttributes: Leave
 BraceWrapping:
     AfterCaseLabel: false
     AfterClass: true
@@ -76,7 +77,7 @@ IndentCaseLabels: false
 IndentGotoLabels: false
 IndentPPDirectives: None
 #IndentAccessModifiers: false
-IndentWrappedFunctionNames: true
+IndentWrappedFunctionNames: false
 KeepEmptyLinesAtTheStartOfBlocks: false
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: All

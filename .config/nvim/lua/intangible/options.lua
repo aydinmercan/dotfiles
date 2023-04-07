@@ -35,7 +35,7 @@ vim.o.fileencodings = 'utf-8'
 -- Mouse
 vim.o.mouse = 'ni'
 
--- Indentation
+-- Default Indentation
 vim.bo.expandtab = true
 vim.bo.shiftwidth = 4
 vim.bo.tabstop = 4

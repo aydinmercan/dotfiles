@@ -1,3 +1,5 @@
+live_config_reload: false
+
 font:
   size: 16
   normal:

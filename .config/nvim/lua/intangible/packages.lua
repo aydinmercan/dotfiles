@@ -15,14 +15,13 @@ vim.opt.rtp:prepend(lazypath)
 
 return require('lazy').setup({
     {'nvim-lua/completion-nvim'},
-    {'editorconfig/editorconfig-vim'},
 
     {
         'neovim/nvim-lspconfig',
         config = function()
             local lsp = require('lspconfig')
-            lsp.gopls.setup{}
             lsp.pyright.setup{}
+            lsp.gopls.setup{}
             lsp.clangd.setup{
                 default_config = {
                     root_dir = [[

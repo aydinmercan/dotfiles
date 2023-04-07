@@ -7,6 +7,7 @@ vim.filetype.add({
         [".clang-format"] = "yaml",
         ["APKBUILD"] = "sh",
         ["Justfile"] = "make",
+        ["sbclrc"] = "lisp",
     },
     pattern = {
         ["(Container|Docker)file.*"] = "dockerfile",

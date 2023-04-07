@@ -44,3 +44,4 @@
     sls = diff --name-only --cached
     sdiff = diff --staged
     adog = log --all --decorate --oneline --graph
+    scdiff = diff --staged --check

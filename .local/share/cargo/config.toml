@@ -12,3 +12,6 @@ r   = "run"
 rr  = "run --release"
 t   = "nextest run"
 u   = "update"
+
+[registries.crates-io]
+protocol = "sparse"
