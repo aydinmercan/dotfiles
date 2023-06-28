@@ -47,33 +47,6 @@ return require('lazy').setup({
     },
 
     {
-        'nvim-treesitter/nvim-treesitter',
-        config = function()
-            require('nvim-treesitter.configs').setup {
-                ensure_installed = 'all',
-                ignore_install = { 'v' },
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = false,
-                },
-                incremental_selection = {
-                    enable = true,
-                },
-                indent = {
-                    enable = true,
-                    disable = { 'c', 'cpp', 'java', 'python', 'toml' },
-                },
-            }
-
-            vim.api.nvim_exec([[
-                set foldmethod=expr
-                set foldexpr=nvim_treesitter#foldexpr()
-                set foldlevel=9999
-            ]], false)
-        end
-    },
-
-    {
         'nvim-lualine/lualine.nvim',
         dependencies = {'kyazdani42/nvim-web-devicons', lazy = true},
         config = function()
@@ -207,4 +180,92 @@ return require('lazy').setup({
             })
         end
     },
+
+    {
+        'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require('nvim-treesitter.configs').setup {
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
+                },
+                incremental_selection = {
+                    enable = true,
+                },
+                indent = {
+                    enable = true,
+                    disable = { 'c', 'cpp', 'java', 'python', 'toml' },
+                },
+                ignore_install = { 'v' },
+                ensure_installed = {
+                    'bibtex',
+                    'c',
+                    'clojure',
+                    'cmake',
+                    'comment',
+                    'commonlisp',
+                    'cpp',
+                    'dockerfile',
+                    'dot',
+                    'eex',
+                    'elixir',
+                    'erlang',
+                    'git_config',
+                    'git_rebase',
+                    'gitattributes',
+                    'gitcommit',
+                    'gitignore',
+                    'go',
+                    'gomod',
+                    'gosum',
+                    'gowork',
+                    'haskell',
+                    'heex',
+                    'hjson',
+                    'http',
+                    'ini',
+                    'java',
+                    'jq',
+                    'json',
+                    'json5',
+                    'jsonnet',
+                    'julia',
+                    'latex',
+                    'llvm',
+                    'lua',
+                    'luap',
+                    'luadoc',
+                    'make',
+                    'markdown',
+                    'markdown_inline',
+                    'meson',
+                    'ocaml',
+                    'ocaml_interface',
+                    'proto',
+                    'python',
+                    'r',
+                    'racket',
+                    'regex',
+                    'rust',
+                    'scala',
+                    'scheme',
+                    'sql',
+                    'starlark',
+                    'toml',
+                    'verilog',
+                    'vim',
+                    'vimdoc',
+                    'yaml',
+                    'zig',
+                },
+            }
+
+            vim.api.nvim_exec([[
+                set foldmethod=expr
+                set foldexpr=nvim_treesitter#foldexpr()
+                set foldlevel=9999
+            ]], false)
+        end
+    },
+
 })

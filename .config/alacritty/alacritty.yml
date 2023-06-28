@@ -3,13 +3,13 @@ live_config_reload: false
 font:
   size: 16
   normal:
-    family: Fantasque Sans Mono
+    family: FantasqueSansM Nerd Font
   bold:
-    family: Fantasque Sans Mono
+    family: FantasqueSansM Nerd Font
   italic:
-    family: Fantasque Sans Mono
+    family: FantasqueSansM Nerd Font
   bold_italic:
-    family: Fantasque Sans Mono
+    family: FantasqueSansM Nerd Font
 
 colors:
   primary:

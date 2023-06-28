@@ -15,6 +15,7 @@ shopt -s autocd
 shopt -s globstar
 shopt -s checkwinsize
 
+alias mbsync='mbsync -c ~/.config/isync/mbsyncrc'
 alias cat='bat -pp'
 alias cmaked='cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug ..'
 alias cmaker='cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..'
