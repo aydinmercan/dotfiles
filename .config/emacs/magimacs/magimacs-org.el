@@ -3,7 +3,7 @@
 (use-package org
   :defer t
   :straight (org :type git
-		 :host github
+                 :host github
                  :repo "emacs-straight/org-mode")
   :init
   (setq org-directory "~/notes"))

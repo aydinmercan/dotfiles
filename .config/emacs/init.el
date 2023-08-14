@@ -10,9 +10,11 @@
 
 (require 'magimacs-ui)
 
+(require 'magimacs-dev)
 (require 'magimacs-edit)
 (require 'magimacs-mail)
 (require 'magimacs-org)
 (require 'magimacs-project)
+(require 'magimacs-term)
 (require 'magimacs-treesitter)
 (require 'magimacs-vc)

@@ -1,8 +1,7 @@
 ;; magimacs-edit.el -*- lexical-binding: t; -*-
 
 (use-package editorconfig
-  :ensure t
-  :config
-  (editorconfig-mode t))
+  :hook
+  (after-init . editorconfig-mode))
 
 (provide 'magimacs-edit)

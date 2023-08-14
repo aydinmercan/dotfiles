@@ -13,9 +13,9 @@
 
 ;; Packages
 
-(setq straight-use-package-by-default t)
-
-(setq straight-recipes-gnu-elpa-use-mirror t
+(setq straight-use-package-by-default t
+      straight-vc-git-default-clone-depth t
+      straight-recipes-gnu-elpa-use-mirror t
       straight-recipes-emacsmirror-use-mirror t)
 
 (defvar bootstrap-version)
@@ -34,8 +34,7 @@
 (straight-use-package 'use-package)
 
 (use-package gcmh
-  :ensure t
-  :config
-  (gcmh-mode t))
+  :hook
+  (after-init . gcmh-mode))
 
 (provide 'magimacs-core)

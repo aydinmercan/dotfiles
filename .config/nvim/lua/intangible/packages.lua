@@ -18,6 +18,7 @@ return require('lazy').setup({
 
     {
         'neovim/nvim-lspconfig',
+        lazy = true,
         config = function()
             local lsp = require('lspconfig')
             lsp.pyright.setup{}
@@ -63,9 +64,10 @@ return require('lazy').setup({
     {
         'nvim-telescope/telescope.nvim',
         dependencies = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},
-        init = function()
-            vim.api.nvim_set_keymap('n', '<CR>', ':Telescope fd<CR>', {noremap = true, silent = true})
-        end,
+
+        keys = {
+            {'<CR>', ':Telescope fd<CR>', mode = 'n', noremap = true, silent = true},
+        },
 
         config = function()
             local actions = require('telescope.actions')
@@ -85,9 +87,10 @@ return require('lazy').setup({
 
     {
         'mhartington/formatter.nvim',
-        init = function()
-            vim.api.nvim_set_keymap('n', '<C-f>', ':Format<CR>', {noremap = true, silent = true})
-        end,
+
+        keys = {
+            {'<C-f>', ':Format<CR>', mode = 'n', noremap = true, silent = true},
+        },
 
         config = function()
             require('formatter').setup({

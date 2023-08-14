@@ -1,7 +1,7 @@
 ;;; magimacs-ui.el -*- lexical-binding: t; -*-
 
 (add-to-list 'default-frame-alist
-             '(font . "FantasqueSansM Nerd Font-16"))
+             '(font . "Fantasque Sans Mono-16"))
 
 (setq use-dialog-box nil)
 
@@ -45,19 +45,10 @@
     (load-theme 'modus-operandi-tinted :no-confirm))
 
 (use-package centaur-tabs
-    :demand
-    :config
-    (centaur-tabs-mode t)
+    :hook
+    (after-init . centaur-tabs-mode)
     :bind
     ("C-<prior>" . centaur-tabs-backward)
     ("C-<next>" . centaur-tabs-forward))
-
-(use-package doom-modeline
-  :config
-  (setq doom-modeline-height 45
-	doom-modeline-bar-width 5
-	)
-  :hook
-  (after-init . doom-modeline-mode))
 
 (provide 'magimacs-ui)
